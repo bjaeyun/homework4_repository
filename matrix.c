@@ -8,66 +8,66 @@ int** transpose_Matrix(int** matrix, int row, int column);
 int** multiply_Matrix(int** matrixA, int Arow, int Acolumn, int** matrixB, int Brow, int Bcolumn);
 
 int main() {
-    printf("[----- [º¯ÀçÀ±] [2022041046] -----]\n");
+    printf("[----- [-----] [2022041046] -----]\n");
     int Arow = 0, Acolumn = 0, Brow = 0, Bcolumn = 0;
     int row=0, column=0;
-    scanf("%d %d", &Arow, &Acolumn); // matrixAÀÇ Çà°ú ¿­À» ÀÔ·Â¹ŞÀ½
-    int** matrixA = createMatrix(Arow, Acolumn); //ÀÌÁß Æ÷ÀÎÅÍ matrixA¿¡ createMatrixÇÔ¼ö ºÒ·¯¿À±â
-    for (int i = 0; i < Arow; i++) { // matrixAÇà·Ä ¸¸µé±â
+    scanf("%d %d", &Arow, &Acolumn); // matrixAï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·Â¹ï¿½ï¿½ï¿½
+    int** matrixA = createMatrix(Arow, Acolumn); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ matrixAï¿½ï¿½ createMatrixï¿½Ô¼ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
+    for (int i = 0; i < Arow; i++) { // matrixAï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
         for (int j = 0; j < Acolumn; j++) {
             scanf("%d", &matrixA[i][j]);
         }
     }
-    scanf("%d %d", &Brow, &Bcolumn); // matrixBÀÇ Çà°ú ¿­À» ÀÔ·Â¹ŞÀ½
-    int** matrixB = createMatrix(Brow, Bcolumn); //ÀÌÁß Æ÷ÀÎÅÍ matrixA¿¡ createMatrixÇÔ¼ö ºÒ·¯¿À±â
-    for (int i = 0; i < Brow; i++) { // matrixBÇà·Ä ¸¸µé±â
+    scanf("%d %d", &Brow, &Bcolumn); // matrixBï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·Â¹ï¿½ï¿½ï¿½
+    int** matrixB = createMatrix(Brow, Bcolumn); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ matrixAï¿½ï¿½ createMatrixï¿½Ô¼ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
+    for (int i = 0; i < Brow; i++) { // matrixBï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
         for (int j = 0; j < Bcolumn; j++) {
             scanf("%d", &matrixB[i][j]);
         }
     }
 
-    if (Arow == Brow && Acolumn == Bcolumn) { //¸¸¾à Arow¿Í Brow°¡ °°°í Acolumn¿Í Bcolumn °°À¸¸é ½ÇÇà
-        int** matrixsum = addition_Matrix(matrixA, matrixB, row, column); //ÀÌÁß Æ÷ÀÎÅÍ matrixsum¿¡ addition_MatrixÇÔ¼ö ºÒ·¯¿À±â
+    if (Arow == Brow && Acolumn == Bcolumn) { //ï¿½ï¿½ï¿½ï¿½ Arowï¿½ï¿½ Browï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Acolumnï¿½ï¿½ Bcolumn ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        int** matrixsum = addition_Matrix(matrixA, matrixB, row, column); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ matrixsumï¿½ï¿½ addition_Matrixï¿½Ô¼ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
         printf("Matrix Sum:\n");
-        PrintMatrix(matrixsum, row, column); //Çà·Ä Ãâ·Â
+        PrintMatrix(matrixsum, row, column); //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
     }
-    else //¾Æ´Ï¶ó¸é
-        printf("Matrix Sum:\n±¸Çö ºÒ°¡´É\n"); // <-ÀÌ ¹®Àå Ãâ·Â
+    else //ï¿½Æ´Ï¶ï¿½ï¿½
+        printf("Matrix Sum:\nï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ï¿½ï¿½\n"); // <-ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
-    if (Arow == Brow && Acolumn == Bcolumn) {//¸¸¾à Arow¿Í Brow°¡ °°°í Acolumn¿Í Bcolumn °°À¸¸é ½ÇÇà
-        int** matrixsub = subtraction_Matrix(matrixA, matrixB, row, column); //ÀÌÁß Æ÷ÀÎÅÍ matrixsub¿¡ subtraction_MatrixÇÔ¼ö ºÒ·¯¿À±â
+    if (Arow == Brow && Acolumn == Bcolumn) {//ï¿½ï¿½ï¿½ï¿½ Arowï¿½ï¿½ Browï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Acolumnï¿½ï¿½ Bcolumn ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        int** matrixsub = subtraction_Matrix(matrixA, matrixB, row, column); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ matrixsubï¿½ï¿½ subtraction_Matrixï¿½Ô¼ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
         printf("Matrix Subtraction:\n");
-        PrintMatrix(matrixsub, row, column); //Çà·Ä Ãâ·Â
+        PrintMatrix(matrixsub, row, column); //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
     }
-    else //¾Æ´Ï¶ó¸é
-        printf("Matrix Subtraction:\n±¸Çö ºÒ°¡´É\n"); // <-ÀÌ ¹®Àå Ãâ·Â
+    else //ï¿½Æ´Ï¶ï¿½ï¿½
+        printf("Matrix Subtraction:\nï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ï¿½ï¿½\n"); // <-ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
-    row = Arow;       // row¿¡ Arow°ª ¹Ş±â
-    column = Acolumn; // column¿¡ Acolumn°ª ¹Ş±â
-    int** matrixtranspose = transpose_Matrix(matrixA, Arow, Acolumn); //ÀÌÁß Æ÷ÀÎÅÍ matrixtranspose¿¡ transpose_MatrixÇÔ¼ö ºÒ·¯¿À±â
+    row = Arow;       // rowï¿½ï¿½ Arowï¿½ï¿½ ï¿½Ş±ï¿½
+    column = Acolumn; // columnï¿½ï¿½ Acolumnï¿½ï¿½ ï¿½Ş±ï¿½
+    int** matrixtranspose = transpose_Matrix(matrixA, Arow, Acolumn); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ matrixtransposeï¿½ï¿½ transpose_Matrixï¿½Ô¼ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
     printf("MatrixA Transpose:\n");
-    PrintMatrix(matrixtranspose, column, row); //Çà·Ä Ãâ·Â
+    PrintMatrix(matrixtranspose, column, row); //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
-    row = Brow;                                // row¿¡ Brow°ª ¹Ş±â
-    column = Bcolumn;                          // column¿¡ Bcolumn°ª ¹Ş±â
-    matrixtranspose = transpose_Matrix(matrixB, Brow, Bcolumn); //ÀÌÁß Æ÷ÀÎÅÍ matrixtranspose¿¡ transpose_MatrixÇÔ¼ö ºÒ·¯¿À±â
+    row = Brow;                                // rowï¿½ï¿½ Browï¿½ï¿½ ï¿½Ş±ï¿½
+    column = Bcolumn;                          // columnï¿½ï¿½ Bcolumnï¿½ï¿½ ï¿½Ş±ï¿½
+    matrixtranspose = transpose_Matrix(matrixB, Brow, Bcolumn); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ matrixtransposeï¿½ï¿½ transpose_Matrixï¿½Ô¼ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
     printf("MatrixB Transpose:\n");
-    PrintMatrix(matrixtranspose, column, row); //Çà·Ä Ãâ·Â
+    PrintMatrix(matrixtranspose, column, row); //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
-    if (Arow == Bcolumn && Brow == Acolumn) { //¸¸¾à Arow¿Í Bcolumn°¡ °°°í Brow¿Í Acolumn °°À¸¸é ½ÇÇà
-        int** matrixmultiply = multiply_Matrix(matrixA, Arow, Acolumn, matrixB, Brow, Bcolumn); //ÀÌÁß Æ÷ÀÎÅÍ matrixmultiply¿¡ multiply_MatrixÇÔ¼ö ºÒ·¯¿À±â
+    if (Arow == Bcolumn && Brow == Acolumn) { //ï¿½ï¿½ï¿½ï¿½ Arowï¿½ï¿½ Bcolumnï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Browï¿½ï¿½ Acolumn ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        int** matrixmultiply = multiply_Matrix(matrixA, Arow, Acolumn, matrixB, Brow, Bcolumn); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ matrixmultiplyï¿½ï¿½ multiply_Matrixï¿½Ô¼ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
         printf("Matrix Multiply:\n");
-        PrintMatrix(matrixmultiply, row, column); //Çà·Ä Ãâ·Â
+        PrintMatrix(matrixmultiply, row, column); //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
     }
-    else //¾Æ´Ï¶ó¸é
-        printf("Matrix Multiply:\n±¸Çö ºÒ°¡´É\n"); // <-ÀÌ ¹®Àå Ãâ·Â
+    else //ï¿½Æ´Ï¶ï¿½ï¿½
+        printf("Matrix Multiply:\nï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ï¿½ï¿½\n"); // <-ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
     return 0;
 }
 
-void PrintMatrix(int** matrix, int row, int column) { //Çà·Ä Ãâ·Â ÇÔ¼ö
-    for (int i = 0; i < row; i++) {                     // 0ºÎÅÍ row-1±îÁö
-        for (int j = 0; j < column; j++) {                // 0ºÎÅÍ column-1±îÁö
+void PrintMatrix(int** matrix, int row, int column) { //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
+    for (int i = 0; i < row; i++) {                     // 0ï¿½ï¿½ï¿½ï¿½ row-1ï¿½ï¿½ï¿½ï¿½
+        for (int j = 0; j < column; j++) {                // 0ï¿½ï¿½ï¿½ï¿½ column-1ï¿½ï¿½ï¿½ï¿½
             printf("%2d", matrix[i][j]);
         }
         printf("\n");
@@ -82,48 +82,48 @@ int** createMatrix(int row, int column) {
             matrix[i][j] = 0;
         }
     }
-    return matrix; // matrix¹İÈ¯
+    return matrix; // matrixï¿½ï¿½È¯
 }
 
-int** addition_Matrix(int** matrixA, int** matrixB, int row, int column) { // matrixAÇà·Ä°ú matrixBÇà·Ä ´õÇÏ±â ÇÔ¼ö ¸¸µé±â
-    int** matrixsum = createMatrix(row, column); //ÀÌÁßÆ÷ÀÎÅÍ matrixsum¿¡ createMatrixÇÔ¼ö ºÒ·¯¿À±â
-    for (int i = 0; i < row; i++) {      // 0ºÎÅÍ row-1±îÁö
-        for (int j = 0; j < column; j++) { // 0ºÎÅÍ column-1±îÁö
+int** addition_Matrix(int** matrixA, int** matrixB, int row, int column) { // matrixAï¿½ï¿½Ä°ï¿½ matrixBï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
+    int** matrixsum = createMatrix(row, column); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ matrixsumï¿½ï¿½ createMatrixï¿½Ô¼ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
+    for (int i = 0; i < row; i++) {      // 0ï¿½ï¿½ï¿½ï¿½ row-1ï¿½ï¿½ï¿½ï¿½
+        for (int j = 0; j < column; j++) { // 0ï¿½ï¿½ï¿½ï¿½ column-1ï¿½ï¿½ï¿½ï¿½
             matrixsum[i][j] = matrixA[i][j] + matrixB[i][j]; // ex>matrixsum[0][0]=matrixA[0][0]+matrixB[0][0], matrixsum[0][1]=matrixA[0][1]+matrixB[0][1]
         }
     }
-    return matrixsum; // matrixsum ¹İÈ¯
+    return matrixsum; // matrixsum ï¿½ï¿½È¯
 }
 
-int** subtraction_Matrix(int** matrixA, int** matrixB, int row, int column) { // matrixAÇà·Ä°ú matrixBÇà·Ä »©±â ÇÔ¼ö ¸¸µé±â
-    int** matrixsub = createMatrix(row, column); //ÀÌÁßÆ÷ÀÎÅÍ matrixsub¿¡ createMatrixÇÔ¼ö ºÒ·¯¿À±â
-    for (int i = 0; i < row; i++) {      // 0ºÎÅÍ row-1±îÁö
-        for (int j = 0; j < column; j++) { // 0ºÎÅÍ column-1±îÁö
+int** subtraction_Matrix(int** matrixA, int** matrixB, int row, int column) { // matrixAï¿½ï¿½Ä°ï¿½ matrixBï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
+    int** matrixsub = createMatrix(row, column); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ matrixsubï¿½ï¿½ createMatrixï¿½Ô¼ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
+    for (int i = 0; i < row; i++) {      // 0ï¿½ï¿½ï¿½ï¿½ row-1ï¿½ï¿½ï¿½ï¿½
+        for (int j = 0; j < column; j++) { // 0ï¿½ï¿½ï¿½ï¿½ column-1ï¿½ï¿½ï¿½ï¿½
             matrixsub[i][j] = matrixA[i][j] - matrixB[i][j]; // ex>matrixsub[0][0]=matrixA[0][0]-matrixB[0][0],matrixsum[0][1]=matrixA[0][1]+matrixB[0][1]
         }
     }
-    return matrixsub; // matrixsub ¹İÈ¯
+    return matrixsub; // matrixsub ï¿½ï¿½È¯
 }
 
-int** transpose_Matrix(int** matrix, int row, int column) { //ÀüÄ¡Çà·Ä ÇÔ¼ö ¸¸µé±â
-    int** transpose = createMatrix(column, row); //ÀÌÁßÆ÷ÀÎÅÍ transpose¿¡ createMatrixÇÔ¼ö ºÒ·¯¿À±â
-    for (int i = 0; i < column; i++) { // 0ºÎÅÍ row-1±îÁö
-        for (int j = 0; j < row; j++) {  // 0ºÎÅÍ column-1±îÁö
+int** transpose_Matrix(int** matrix, int row, int column) { //ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
+    int** transpose = createMatrix(column, row); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ transposeï¿½ï¿½ createMatrixï¿½Ô¼ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
+    for (int i = 0; i < column; i++) { // 0ï¿½ï¿½ï¿½ï¿½ row-1ï¿½ï¿½ï¿½ï¿½
+        for (int j = 0; j < row; j++) {  // 0ï¿½ï¿½ï¿½ï¿½ column-1ï¿½ï¿½ï¿½ï¿½
             transpose[i][j] = matrix[j][i]; // ex>transpose[0][0]=matrix[][0], transpose[0][1]=matrix[1][0],transpose[0][2]=matrix[2][0],...,transpose[1][0]=matrix[0][1]
         }
     }
-    return transpose; // transpose ¹İÈ¯
+    return transpose; // transpose ï¿½ï¿½È¯
 }
 
-int** multiply_Matrix(int** matrixA, int Arow, int Acolumn, int** matrixB, int Brow, int Bcolumn) { // matrixAÇà·Ä°ú matrixBÇà·ÄÀÇ °ö ÇÔ¼ö ¸¸µé±â
-    int** result = createMatrix(Arow, Bcolumn); //ÀÌÁßÆ÷ÀÎÅÍ result¿¡ createMatrixÇÔ¼ö ºÒ·¯¿À±â
-    for (int i = 0; i < Arow; i++) {      // 0ºÎÅÍ Arow-1±îÁö
-        for (int j = 0; j < Bcolumn; j++) { // 0ºÎÅÍ Bcolumn-1±îÁö
+int** multiply_Matrix(int** matrixA, int Arow, int Acolumn, int** matrixB, int Brow, int Bcolumn) { // matrixAï¿½ï¿½Ä°ï¿½ matrixBï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
+    int** result = createMatrix(Arow, Bcolumn); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ resultï¿½ï¿½ createMatrixï¿½Ô¼ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
+    for (int i = 0; i < Arow; i++) {      // 0ï¿½ï¿½ï¿½ï¿½ Arow-1ï¿½ï¿½ï¿½ï¿½
+        for (int j = 0; j < Bcolumn; j++) { // 0ï¿½ï¿½ï¿½ï¿½ Bcolumn-1ï¿½ï¿½ï¿½ï¿½
             result[i][j] = 0;
             for (int k = 0; k < Acolumn; k++) {
                 result[i][j] += matrixA[i][k] * matrixB[k][j]; //ex>result[0][0]= matrixA[0][0] * matrixB[0][0]+ matrixA[0][1] * matrixB[1][0], matrixA[0][2] * matrixB[2][0]
             }
         }
     }
-    return result; // result ¹İÈ¯
+    return result; // result ï¿½ï¿½È¯
 }
